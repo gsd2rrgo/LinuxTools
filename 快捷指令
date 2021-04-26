@@ -1,1 +1,2 @@
-https://raw.githubusercontent.com/gsd2rrgo/LinuxTools/main/qBittorrent-nox-4-1-9.sh
+wget https://raw.githubusercontent.com/gsd2rrgo/LinuxTools/main/qBittorrent-nox-4-1-9.sh
+bash qBittorrent-nox-4-1-9.sh
