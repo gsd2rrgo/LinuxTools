@@ -12,13 +12,13 @@ then
     then
         for line in $(cat /home/UpLoadList.txt)
         do 
-            for Name in $FileNames
+            for Name in ${FileNames}
             do
                 if [ "${line}" != "${Name}" ]
                 then
                     echo "打包..."
                     # 打包
-                    tar cvf "${Name}.tar" "${Name}"
+                    zip -s 4000m -r "${Name}.zip" "${Name}/"
                     echo "輸出..."
                     echo "${Name}" >> /home/UpLoadList.txt
                     echo "移動..."
@@ -32,7 +32,6 @@ then
         cd /home/baiduupload
         bypy upload
         echo "Upload...End"
-        rm -rf /home/baiduupload/*
     fi
 fi
 echo "Done..."
