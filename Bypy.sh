@@ -1,13 +1,14 @@
 cd /home/baiduupload
 echo "Chack..."
-UpFile=*
-if [ "${UpFile}" == "*" ]
+UpFile=$(ls)
+if [ "${UpFile}" == "" ]
 then
     echo "Start..."
     # 獲取文件名
     cd /home/baidu
     FileNames=*
-    if [ "${FileNames}" != "*" ]
+    FileCheck=$(ls)
+    if [ "${FileCheck}" != "" ]
     then
         for line in $(cat /home/UpLoadList.txt)
         do 
