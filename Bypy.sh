@@ -1,7 +1,9 @@
 cd /home/baiduupload
+echo "Chack..."
 UpFile=*
 if [ "${UpFile}" == "*" ]
 then
+    echo "Start..."
     # 獲取文件名
     cd /home/baidu
     FileNames=*
@@ -21,7 +23,7 @@ then
                 fi
             done
         done
-        
+        echo "Upload..."
         # 上傳
         cd /home/baiduupload
         bypy upload
@@ -29,4 +31,4 @@ then
         rm -rf /home/baiduupload/*
     fi
 fi
-
+echo "Done..."
