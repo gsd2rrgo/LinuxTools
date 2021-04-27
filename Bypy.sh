@@ -14,11 +14,11 @@ then
         do 
             for Name in $FileNames
             do
-                if [ "${line}" != "$Name" ]
+                if [ "${line}" != "${Name}" ]
                 then
                     echo "打包..."
                     # 打包
-                    tar cvf "${Name}.tar" ${Name}
+                    tar cvf "${Name}.tar" "${Name}"
                     echo "輸出..."
                     echo "${Name}" >> /home/UpLoadList.txt
                     echo "移動..."
@@ -31,7 +31,7 @@ then
         # 上傳
         cd /home/baiduupload
         bypy upload
-
+        echo "Upload...End"
         rm -rf /home/baiduupload/*
     fi
 fi
