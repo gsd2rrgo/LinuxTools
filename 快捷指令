@@ -7,4 +7,4 @@ bash Bypy.sh
 
 打包：tar cvf FileName.tar DirName
 
-
+screen -R pid
