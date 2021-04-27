@@ -23,7 +23,7 @@ then
                     echo "${Name}" >> /home/UpLoadList.txt
                     echo "移動..."
                     # 移動
-                    mv -f "/home/baidu/${Name}.tar" "/home/baiduupload/${Name}.tar"
+                    mv -f "/home/baidu/${Name}.z*" "/home/baiduupload/"
                 fi
             done
         done
