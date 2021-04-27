@@ -16,9 +16,12 @@ then
             do
                 if [ "${line}" != "$Name" ]
                 then
+                    echo "打包..."
                     # 打包
                     tar cvf "${Name}.tar" ${Name}
+                    echo "輸出..."
                     echo "${Name}" >> /home/UpLoadList.txt
+                    echo "移動..."
                     # 移動
                     mv -f "/home/baidu/${Name}.tar" "/home/baiduupload/${Name}.tar"
                 fi
