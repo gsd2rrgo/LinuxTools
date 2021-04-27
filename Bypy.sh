@@ -10,12 +10,18 @@ then
     FileCheck=$(ls)
     if [ "${FileCheck}" != "" ]
     then
-        for line in $(cat /home/UpLoadList.txt)
-        do 
-            for Name in ${FileNames}
-            do
-                if [ "${line}" != "${Name}" ]
+        for Name in ${FileNames}
+        do
+            flag=""
+            for line in $(cat /home/UpLoadList.txt)
+            do 
+                if [ "${line}" == "${Name}" ]
                 then
+                    flag="HAS"
+                fi
+            done
+            if [ "${flag}" != "HAS" ]
+            then
                     echo "打包..."
                     # 打包
                     zip -s 4000m -r "${Name}.zip" "${Name}/"
@@ -24,8 +30,7 @@ then
                     echo "移動..."
                     # 移動
                     mv -f "/home/baidu/${Name}".z* "/home/baiduupload/"
-                fi
-            done
+            fi
         done
         echo "Upload..."
         # 上傳
